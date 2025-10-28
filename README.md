@@ -86,3 +86,4 @@ O projeto foi desenvolvido para atender a todos os requisitos das quatro entrega
 
 ---
 *Este projeto é uma entrega acadêmica de Front-End e simula a funcionalidade completa de uma aplicação web.*
+# tecnoinclusão
