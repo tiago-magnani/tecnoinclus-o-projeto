@@ -1,3 +1,4 @@
+<img width="1919" height="867" alt="Captura de tela 2025-10-28 183825" src="https://github.com/user-attachments/assets/cc0b1ead-b9cf-47e5-beed-c2bf18881f1d" />
 # 🤖 TecnoInclusão | Projeto de Desenvolvimento Front-End
 
 Este repositório contém o projeto da plataforma web da ONG **TecnoInclusão**, desenvolvido como trabalho da disciplina de **Desenvolvimento Front-End para Web**. O objetivo foi criar uma aplicação dinâmica, responsiva e acessível, aplicando os fundamentos de HTML5, CSS3, e JavaScript avançado.
