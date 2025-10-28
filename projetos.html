@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas e Projetos | TecnoInclusão</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" role="banner">
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/img/logo.png" alt="Logo TecnoInclusão">
+            <span class="nome-ong">TecnoInclusão</span>
+        </div>
+        
+        <div class="dark-mode-switch">
+            <span class="text">Modo Escuro</span>
+            <input type="checkbox" id="dark-mode-toggle" aria-label="Ativar ou desativar modo escuro">
+            <label for="dark-mode-toggle" class="switch-label">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="menu-toggle" role="button" aria-controls="main-navigation" aria-expanded="false">&#9776;</div> 
+
+        <nav class="nav-menu" id="main-navigation" role="navigation">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                
+                <li role="menuitem" aria-haspopup="true">
+                    <a href="projetos.html">Programas</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a role="menuitem" href="projetos.html#programas">Cursos</a></li>
+                        <li role="none"><a role="menuitem" href="projetos.html#voluntariado">Voluntariado</a></li>
+                        <li role="none"><a role="menuitem" href="projetos.html#doacao">Doação</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="index.html#impacto">Sobre</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <a href="cadastro.html" class="btn btn-primary btn-large">CADASTRO</a>
+        </nav>
+    </div>
+</header>
+
+    <main id="main-content" role="main">
+        
+        <section class="section-principal">
+            <div class="container">
+                <h1>Nossos Programas de Capacitação</h1>
+                <p class="subtitle">Descubra as iniciativas que promovem a inclusão digital e capacitam a próxima geração de talentos.</p>
+            </div>
+        </section>
+
+        <section id="programas" class="section-programas container">
+            
+            <article class="projeto-card">
+                <h2>Front-End Essencial <span class="badge badge-primary">Novo</span></h2>
+                <figure>
+                    <img src="/assets/img/projeto_frontend.jpg" alt="Aula de Programação Front-End">
+                    <figcaption>Desenvolvendo o futuro com HTML, CSS e JavaScript.</figcaption>
+                </figure>
+                <p>Um bootcamp intensivo focado nas demandas do mercado de trabalho júnior. Capacitamos nossos alunos para criar interfaces web responsivas e acessíveis.</p>
+                
+                <div id="detalhes-frontend" class="detalhes-extra" aria-hidden="true">
+                    <hr>
+                    <h4>Conteúdo Detalhado do Módulo:</h4>
+                    <ul>
+                        <li>Módulo 1: HTML Semântico e Acessibilidade</li>
+                        <li>Módulo 2: CSS3 Avançado (Flexbox e Grid)</li>
+                        <li>Módulo 3: Fundamentos de JavaScript ES6</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="btn btn-secondary toggle-detalhes" data-target="#detalhes-frontend" aria-expanded="false">Detalhes do Curso</a>
+            </article>
+
+            <article class="projeto-card">
+                <h2>Robótica e Lógica</h2>
+                <figure>
+                    <img src="/assets/img/projeto_robotica.jpg" alt="Curso de Robótica">
+                    <figcaption>Introdução ao pensamento lógico para jovens de 12 a 16 anos.</figcaption>
+                </figure>
+                <p>Fomentando o raciocínio crítico através de kits de robótica e programação em blocos, preparando mentes para a inovação desde cedo.</p>
+                
+                <div id="detalhes-robotica" class="detalhes-extra" aria-hidden="true">
+                    <hr>
+                    <h4>Conteúdo Detalhado do Módulo:</h4>
+                    <ul>
+                        <li>Módulo 1: Introdução ao Pensamento Lógico e Algoritmos</li>
+                        <li>Módulo 2: Componentes Eletrônicos Básicos</li>
+                        <li>Módulo 3: Programação em Blocos (Ex: Scratch, Blocky)</li>
+                    </ul>
+                </div>
+                
+                <a href="#" class="btn btn-secondary toggle-detalhes" data-target="#detalhes-robotica" aria-expanded="false">Detalhes do Curso</a>
+            </article>
+            
+        </section>
+
+        <aside class="section-apoio container" role="complementary">
+            <section id="voluntariado">
+                <h2>Seja Voluntário</h2>
+                <p class="subtitle">Doe seu tempo e conhecimento. Temos vagas para mentores de programação e apoio administrativo.</p>
+                <a href="cadastro.html" class="btn btn-primary btn-large">Candidatar-se</a>
+            </section>
+
+            <section id="doacao">
+                <h2>Apoie a Causa</h2>
+                <p class="subtitle">Sua doação garante a compra de equipamentos e a manutenção dos nossos laboratórios.</p>
+                <a href="cadastro.html" class="btn btn-secondary btn-large">DOAR AGORA</a>
+            </section>
+        </aside>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 TecnoInclusão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>

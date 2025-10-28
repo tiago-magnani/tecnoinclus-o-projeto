@@ -1,0 +1,689 @@
+/* ========================================================= */
+/* 0. VARIÁVEIS CSS E RESET BÁSICO */
+/* ========================================================= */
+:root {
+    /* PALETA DE CORES (8 Cores) */
+    --cor-primary: #007bff;      
+    --cor-secondary: #28a745;    
+    --cor-tertiary: #ffc107;     
+    --cor-danger: #dc3545;       
+    --cor-dark: #212529;         
+    --cor-medium: #6c757d;       
+    --cor-light: #f8f9fa;        
+    --cor-background: #e9ecef;   
+
+    /* TIPOGRAFIA (5 Tamanhos) */
+    --font-xl: 2.5rem;   
+    --font-lg: 1.75rem;  
+    --font-md: 1.25rem;  
+    --font-base: 1rem;   
+    --font-sm: 0.875rem; 
+    --font-family: 'Poppins', 'sans-serif';
+    
+    /* SISTEMA DE ESPAÇAMENTO MODULAR (Base 8px) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+    --space-3xl: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--cor-background);
+    color: var(--cor-dark);
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Aplicação de Tipografia */
+h1 { font-size: var(--font-xl); margin-bottom: var(--space-md); font-weight: 700; }
+h2 { font-size: var(--font-lg); margin-bottom: var(--space-md); font-weight: 700; }
+h3 { font-size: var(--font-md); margin-bottom: var(--space-sm); font-weight: 600; }
+p { margin-bottom: var(--space-md); }
+
+/* ---------------------------------------------------------------- */
+/* 1. TIPOGRAFIA E LINKS */
+/* ---------------------------------------------------------------- */
+
+a {
+    color: var(--cor-primary);
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--cor-secondary);
+    text-decoration: underline;
+}
+
+/* Estilos de FOCO obrigatórios para WCAG */
+a:focus, button:focus, input:focus, select:focus, textarea:focus, .menu-toggle:focus, .switch-label:focus {
+    outline: 2px solid var(--cor-tertiary); 
+    outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------- */
+/* 2. BOTÕES (Buttons) - Incluindo todos os estados visuais */
+/* ---------------------------------------------------------------- */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--cor-primary);
+    color: var(--cor-light);
+    border-color: var(--cor-primary);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    text-decoration: none;
+}
+.btn-primary:active { background-color: #004499; }
+.btn-primary:focus { outline: 3px solid var(--cor-tertiary); }
+
+
+.btn-secondary {
+    background-color: var(--cor-secondary);
+    color: var(--cor-light);
+    border-color: var(--cor-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+    text-decoration: none;
+}
+.btn-secondary:active { background-color: #155724; }
+.btn-secondary:focus { outline: 3px solid var(--cor-tertiary); }
+
+.btn:disabled {
+    background-color: var(--cor-medium); 
+    border-color: var(--cor-medium);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+/* ---------------------------------------------------------------- */
+/* 3. HEADER e NAVEGAÇÃO */
+/* ---------------------------------------------------------------- */
+
+.header {
+    background-color: var(--cor-light);
+    padding: var(--space-md) 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO E NOME DA ONG */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm); 
+}
+.logo img {
+    height: var(--space-xxl); 
+    width: auto;
+}
+.logo .nome-ong {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: var(--font-lg); 
+    font-weight: 700; 
+    color: var(--cor-primary); 
+    line-height: 1; 
+}
+
+/* NAVEGAÇÃO PRINCIPAL */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin-right: var(--space-md);
+}
+
+.nav-menu ul li {
+    position: relative;
+}
+
+.nav-menu ul li a {
+    color: var(--cor-dark);
+    padding: var(--space-sm) var(--space-md);
+    display: block;
+    font-weight: 500;
+}
+
+/* Dropdown Menu (Submenu) */
+.nav-menu ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    min-width: 180px;
+    background-color: var(--cor-light);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: var(--space-sm) 0;
+    list-style: none;
+}
+
+.nav-menu ul li:hover .dropdown-menu {
+    display: block; 
+}
+.nav-menu ul li .dropdown-menu li a {
+    padding: var(--space-sm) var(--space-md);
+    white-space: nowrap;
+}
+
+/* Toggle do Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none; 
+    font-size: var(--font-lg);
+    cursor: pointer;
+    color: var(--cor-dark);
+    padding: var(--space-sm);
+}
+
+/* ---------------------------------------------------------------- */
+/* 3.1 SWITCH DE MODO ESCURO (Dark Mode Switch) - CORRIGIDO */
+/* ---------------------------------------------------------------- */
+.dark-mode-switch {
+    /* CORREÇÃO: Usar Flexbox para alinhar texto e switch */
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm); /* Espaço entre o texto e o switch */
+    order: 1; /* Posição no header */
+}
+
+.dark-mode-switch .text {
+    color: var(--cor-dark);
+    font-size: var(--font-base);
+    white-space: nowrap;
+}
+
+#dark-mode-toggle {
+    display: none;
+}
+
+.switch-label {
+    position: relative;
+    display: inline-block;
+    width: 60px; 
+    height: 34px; 
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.3s;
+}
+
+.switch-label .slider {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+#dark-mode-toggle:checked + .switch-label {
+    background-color: var(--cor-primary);
+}
+
+#dark-mode-toggle:checked + .switch-label .slider {
+    transform: translateX(26px);
+}
+
+
+/* ---------------------------------------------------------------- */
+/* 4. BANNER PRINCIPAL (Hero) */
+/* ---------------------------------------------------------------- */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('../img/hero-banner.jpg') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-light);
+    padding: var(--space-xxl) 0;
+}
+
+.hero-content p {
+    background-color: rgba(0, 0, 0, 0.3); 
+    padding: var(--space-sm) var(--space-md);
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* ---------------------------------------------------------------- */
+/* 5. SEÇÃO GERAL E LAYOUTS */
+/* ---------------------------------------------------------------- */
+
+.section-impacto, 
+.section-cadastro, 
+.section-principal,
+.section-contato,
+.section-apoio {
+    padding: var(--space-3xl) 0;
+    background-color: var(--cor-light); 
+    margin-bottom: 2px;
+}
+
+.section-impacto h2, .section-cadastro h2, .section-principal h1 {
+    text-align: center;
+    color: var(--cor-primary);
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: var(--space-xxl);
+    background-color: #ffffff;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-primary); 
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ---------------------------------------------------------------- */
+/* 6. IMPACTO E NÚMEROS */
+/* ---------------------------------------------------------------- */
+
+.impacto-numeros {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--space-lg);
+    text-align: center;
+}
+
+.card-numero {
+    padding: var(--space-xl);
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--cor-background); 
+}
+
+.card-numero h3 {
+    font-size: 2.5em;
+    color: var(--cor-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+/* ---------------------------------------------------------------- */
+/* 7. FORMULÁRIO (Estilos, Erros e Validação) */
+/* ---------------------------------------------------------------- */
+
+.form-complexo {
+    max-width: 700px;
+    margin: var(--space-xxl) auto;
+    padding: var(--space-xl);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: var(--cor-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-radius: 5px;
+}
+
+legend {
+    font-size: var(--font-md);
+    font-weight: 600;
+    color: var(--cor-primary);
+    padding: 0 var(--space-sm);
+}
+
+.form-group { margin-bottom: var(--space-md); }
+.form-group label { 
+    display: block; 
+    margin-bottom: var(--space-xs); 
+    font-weight: 600; 
+}
+.form-group input, .form-group select {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: var(--font-base);
+}
+
+/* Estilos de Erro para Validação JS */
+.input-error {
+    border: 2px solid var(--cor-danger) !important;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+.error-message {
+    color: var(--cor-danger);
+    font-size: var(--font-sm);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* 8. PÁGINA DE PROJETOS (Cards e Toggle) */
+/* ---------------------------------------------------------------- */
+
+.section-programas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xl); 
+    padding: var(--space-xl) 0;
+}
+
+.projeto-card {
+    /* CORREÇÃO AQUI: Garante que os cards fiquem em duas colunas grandes */
+    flex: 1 1 calc(50% - var(--space-xl) / 2); 
+    max-width: calc(50% - var(--space-xl) / 2);
+    min-width: 300px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: var(--space-lg);
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover; 
+    border-radius: 4px;
+    margin-bottom: var(--space-md);
+}
+
+/* Estilos para o Conteúdo Toggle */
+.detalhes-extra {
+    display: none; 
+    opacity: 0;   
+    transition: opacity 0.5s ease;
+    padding-top: var(--space-md);
+    text-align: left;
+}
+
+.detalhes-extra h4 {
+    color: var(--cor-primary);
+    border-left: 3px solid var(--cor-secondary);
+    padding-left: var(--space-sm);
+}
+
+.detalhes-extra ul {
+    list-style: disc;
+    margin-left: var(--space-lg);
+    padding: var(--space-sm) 0;
+    font-size: var(--font-base);
+}
+
+/* Componente Alert (Novidade) */
+.alert {
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo */
+    white-space: nowrap; 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: opacity 0.4s ease;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 4px;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: var(--space-sm);
+}
+
+.badge-primary {
+    background-color: var(--cor-primary);
+    color: var(--cor-light);
+}
+
+
+/* ---------------------------------------------------------------- */
+/* 9. RODAPÉ E CONTATO */
+/* ---------------------------------------------------------------- */
+
+.footer {
+    background-color: var(--cor-dark);
+    color: var(--cor-light);
+    text-align: center;
+    padding: var(--space-lg) 0;
+}
+
+.section-contato address {
+    margin-top: var(--space-md);
+    font-style: normal;
+    font-size: 1.1em;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* 10. ACESSIBILIDADE E MODO ESCURO */
+/* ---------------------------------------------------------------- */
+
+.dark-mode {
+    --cor-primary: #8cbbf0;      
+    --cor-secondary: #7ed38c;    
+    --cor-dark: #f8f9fa;         
+    --cor-light: #212529;        
+    --cor-background: #121212;   
+}
+
+.dark-mode body {
+    background-color: var(--cor-background);
+    color: var(--cor-dark);
+}
+
+.dark-mode .header,
+.dark-mode .section-impacto,
+.dark-mode .section-cadastro,
+.dark-mode .section-contato,
+.dark-mode .projeto-card,
+.dark-mode .form-complexo,
+.dark-mode .card-numero,
+.dark-mode .subtitle,
+.dark-mode .dropdown-menu {
+    background-color: var(--cor-light);
+    color: var(--cor-dark);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .hero {
+    /* Aumenta o overlay e garante texto claro */
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                url('../img/hero-banner.jpg') no-repeat center center/cover;
+    color: var(--cor-dark);
+}
+
+.dark-mode .hero-content p {
+    color: var(--cor-dark); 
+    background-color: rgba(255, 255, 255, 0.15); 
+}
+
+.dark-mode .logo .nome-ong {
+    color: var(--cor-primary);
+}
+
+.dark-mode .dark-mode-switch .text {
+    color: var(--cor-dark);
+}
+.dark-mode #dark-mode-toggle:checked + .switch-label {
+     background-color: var(--cor-secondary); 
+}
+
+
+/* ---------------------------------------------------------------- */
+/* 11. MEDIA QUERIES (5 BREAKPOINTS) */
+/* ---------------------------------------------------------------- */
+
+/* BP 2: Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .menu-toggle { display: none; }
+    .nav-menu { display: flex; }
+    .dark-mode-switch { order: 3; } /* Garante a ordem do switch */
+
+    .section-programas {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .projeto-card {
+        flex: 1 1 calc(50% - var(--space-xl) / 2);
+        max-width: calc(50% - var(--space-xl) / 2);
+    }
+}
+
+/* BP 3: Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container { max-width: 960px; }
+    .section-apoio.container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xxl);
+        
+        & section {
+            padding: var(--space-xxl);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+/* BP 4: Extra large devices (1200px and up) */
+@media (min-width: 1200px) {
+    .container { max-width: 1140px; }
+}
+
+/* BP 5: Ultra large devices (1400px and up) */
+@media (min-width: 1400px) {
+    .container { max-width: 1320px; }
+}
+
+/* Ajustes Mobile (Máximo 767px - Menu Hamburguer é ativado) */
+@media (max-width: 767px) {
+    .header .container {
+        flex-wrap: wrap;
+    }
+    .menu-toggle { 
+        display: block; 
+        order: 2; 
+        margin-left: auto; /* Empurra o menu para o lado direito */
+    }
+    .dark-mode-switch {
+        order: 3; 
+        margin-right: 0;
+        margin-top: var(--space-sm);
+    }
+    .logo {
+        order: 1;
+    }
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        background-color: var(--cor-light);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0;
+    }
+    .nav-menu ul li {
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        text-align: center;
+    }
+    .impacto-numeros {
+        flex-direction: column;
+    }
+    .projeto-card {
+        flex: 1 1 100%;
+    }
+    .dark-mode-switch .text {
+        /* Garante que o texto seja escondido em telas muito pequenas */
+        display: none; 
+    }
+}

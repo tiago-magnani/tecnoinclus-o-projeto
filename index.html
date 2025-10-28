@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | TecnoInclusão</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" role="banner">
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/img/logo.png" alt="Logo TecnoInclusão">
+            <span class="nome-ong">TecnoInclusão</span>
+        </div>
+        
+        <div class="dark-mode-switch">
+            <span class="text">Modo Escuro</span>
+            <input type="checkbox" id="dark-mode-toggle" aria-label="Ativar ou desativar modo escuro">
+            <label for="dark-mode-toggle" class="switch-label">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="menu-toggle" role="button" aria-controls="main-navigation" aria-expanded="false">&#9776;</div> 
+
+        <nav class="nav-menu" id="main-navigation" role="navigation">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                
+                <li role="menuitem" aria-haspopup="true">
+                    <a href="projetos.html">Programas</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a role="menuitem" href="projetos.html#programas">Cursos</a></li>
+                        <li role="none"><a role="menuitem" href="projetos.html#voluntariado">Voluntariado</a></li>
+                        <li role="none"><a role="menuitem" href="projetos.html#doacao">Doação</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="index.html#impacto">Sobre</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <a href="cadastro.html" class="btn btn-primary btn-large">CADASTRO</a>
+        </nav>
+    </div>
+</header>
+
+    <main id="main-content" role="main">
+        
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-content">
+                <h1 id="hero-title">Conectando Pessoas. Transformando Futuros.</h1>
+                <p>Nossa missão é combater a desigualdade digital, transformando vidas através da educação tecnológica gratuita e acessível.</p>
+                <a href="projetos.html#programas" class="btn btn-secondary btn-large">Ver Cursos</a>
+            </div>
+        </section>
+
+        <section id="impacto" class="section-impacto">
+            <div class="container">
+                <h2>Nosso Impacto Social</h2>
+                <p class="subtitle">A tecnologia como ferramenta de transformação para um futuro mais justo e digital.</p>
+                
+                <div class="impacto-numeros">
+                    <article class="card-numero">
+                        <h3>1.2K+</h3>
+                        <p>Alunos Formados</p>
+                    </article>
+                    <article class="card-numero">
+                        <h3>98%</h3>
+                        <p>Índice de Empregabilidade</p>
+                    </article>
+                    <article class="card-numero">
+                        <h3>10</h3>
+                        <p>Anos de Atuação</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p class="subtitle">Ficou com alguma dúvida? Envie uma mensagem ou visite-nos.</p>
+                
+                <address role="contentinfo">
+                    <p>Rua da Inovação, 404 - Bairro Tecnológico</p>
+                    <p>São Paulo, SP - Brasil</p>
+                    <p>Telefone: <a href="tel:+5511987654321">(11) 98765-4321</a></p>
+                    <p>Email: <a href="mailto:contato@tecnoinclusao.org">contato@tecnoinclusao.org</a></p>
+                </address>
+                
+                <div style="margin-top: 30px;">
+                    <a href="cadastro.html" class="btn btn-primary btn-large">Cadastre-se</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2024 TecnoInclusão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+</html>
